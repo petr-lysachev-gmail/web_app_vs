@@ -1,0 +1,33 @@
+swagger: '2.0'
+info:
+  title: My API
+  version: v1
+host: travelauthorizationpoc.appspot.com
+paths:
+  /WeatherForecast:
+    get:
+      tags:
+        - WeatherForecast
+      operationId: weatherForecast
+      responses:
+        '200':
+          description: Success
+          schema:
+             type: array
+             items:
+               WeatherForecast:
+                 type: object
+                 properties:
+                   date:
+                     type: string
+                     format: date-time
+                   temperatureC:
+                     type: integer
+                     format: int32
+                   temperatureF:
+                     type: integer
+                     format: int32
+                     readOnly: true
+                   summary:
+                     type: string
+                     nullable: true

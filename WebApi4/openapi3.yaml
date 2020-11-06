@@ -1,0 +1,52 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: My API
+  contact: {}
+host: travelauthorizationpoc.appspot.com
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /WeatherForecast:
+    get:
+      description: ''
+      summary: WeatherForecast_GET
+      tags:
+        - WeatherForecast
+      operationId: WeatherForecast_GET
+      deprecated: false
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/WeatherForecast'
+          headers: {}
+definitions:
+  WeatherForecast:
+    title: WeatherForecast
+    type: object
+    properties:
+      date:
+        type: string
+        format: date-time
+      temperatureC:
+        type: integer
+        format: int32
+      temperatureF:
+        type: integer
+        format: int32
+      summary:
+        type: string
+tags:
+  - name: WeatherForecast
+    description: ''

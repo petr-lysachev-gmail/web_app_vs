@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /WebApi4
 
 # copy csproj and restore as distinct layers
-COPY *.csproj .
+COPY WebApi4/*.csproj .
 RUN dotnet restore
 
 # copy and publish app and libraries

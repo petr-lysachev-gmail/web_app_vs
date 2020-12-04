@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'docker build -t gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs:$COMMIT_SHA -f build/Dockerfile .']
+  args: ['-c', 'docker build -t gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs:latest_build -f build/Dockerfile .']
 timeout: '1600s'
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -10,5 +10,5 @@ steps:
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs@af658955896ab695121798569b87dd3ddaede309']
+  args: ['-c', 'gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs@latest_build']
 timeout: '1600s'

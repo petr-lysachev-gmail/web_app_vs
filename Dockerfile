@@ -20,7 +20,7 @@ ENTRYPOINT ["dotnet", "WebApi4.dll"]
 #FROM gcr.io/cloud-builders/gcloud
 #RUN gcloud app deploy app/bin/Debug/netcoreapp3.1/publish/app.yaml 
 
-FROM gcr.io/cloud-builders/gcloud
-RUN gcloud config set account 84196235246@cloudbuild.gserviceaccount.com
-RUN gcloud auth activate-service-account 84196235246@cloudbuild.gserviceaccount.com
-RUN gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/web_app_vs:4d5fb2f664097926010525b5a807c27340fbae64
+#FROM gcr.io/cloud-builders/gcloud
+#RUN gcloud config set account 84196235246@cloudbuild.gserviceaccount.com
+#RUN gcloud auth activate-service-account 84196235246@cloudbuild.gserviceaccount.com
+#RUN gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/web_app_vs:4d5fb2f664097926010525b5a807c27340fbae64

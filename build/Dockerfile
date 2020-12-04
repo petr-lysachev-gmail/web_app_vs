@@ -11,7 +11,8 @@ COPY . .
 RUN dotnet publish -c release -o /app
 
 # final stage/image
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+
+FROM gcr.io/google-appengine/aspnetcore:3.1.0
 WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "WebApi4.dll"]

@@ -10,5 +10,5 @@ steps:
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs@$COMMIT_SHA']
+  args: ['-c', 'gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs@af658955896ab695121798569b87dd3ddaede309']
 timeout: '1600s'

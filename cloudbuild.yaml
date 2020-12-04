@@ -6,5 +6,9 @@ timeout: '1600s'
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
+  args: ['-c', 'echo $COMMIT_SHA']
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
   args: ['-c', 'gcloud app deploy --image-url=gcr.io/travelauthorizationpoc/github.com/petr-lysachev-gmail/web_app_vs@$COMMIT_SHA']
 timeout: '1600s'

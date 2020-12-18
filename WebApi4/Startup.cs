@@ -28,6 +28,15 @@ namespace WebApi4
         {
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "defaultCORSPolicy",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("*");
+                                  });
+            });
+
             // Register the Swagger generator
             services.AddSwaggerGen(c =>
             {
@@ -59,6 +68,8 @@ namespace WebApi4
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("defaultCORSPolicy");
 
             app.UseEndpoints(endpoints =>
             {
